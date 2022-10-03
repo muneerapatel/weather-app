@@ -1,0 +1,120 @@
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.outline {
+  border: solid black;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 50px;
+}
+.searchForm {
+  margin: 25px 0px 35px;
+  text-align: center;
+}
+.city {
+  text-align: center;
+}
+
+.currentWeatherImage {
+  font-size: 30px;
+  text-align: center;
+}
+
+.currentWeather {
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+.currentTemp {
+  font-size: 70px;
+  margin-left: 43px;
+}
+
+.currentHighLow {
+  font-size: 17px;
+  line-height: 5px;
+  margin-left: 43px;
+}
+.high {
+  color: rgb(165, 7, 7);
+}
+
+.low {
+  color: rgb(20, 111, 214);
+}
+
+.rightTop {
+  text-align: right;
+  margin-right: 30px;
+}
+
+.location {
+  font-size: 30px;
+}
+
+.schedule {
+  font-size: 25px;
+
+  margin-top: 5px;
+}
+
+.tempFeel {
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.dayForecast {
+  text-align: center;
+  margin: 40px 10px;
+}
+.dayTimes {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.dayIcons {
+  font-size: 30px;
+}
+
+.dayTemps {
+  font-size: 20px;
+  color: blue;
+  margin-top: 10px;
+}
+
+.weekForecast {
+  text-align: center;
+  margin-top: 80px;
+}
+.weekDays {
+  font-size: 25px;
+}
+
+.weekIcons {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.weekTemps {
+  font-size: 20px;
+}
+
+.weekOne {
+  padding: 0;
+  margin: 0px;
+}
+.expandForecast {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
