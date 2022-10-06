@@ -10,6 +10,12 @@ function displayWeather(response) {
   document.querySelector(".tempFeel").innerHTML = Math.round(
     response.data.main.feels_like
   );
+  document.querySelector(".low").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+  document.querySelector(".high").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
 }
 
 // city display
