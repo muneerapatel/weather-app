@@ -45,6 +45,7 @@ a {
 
 .currentHighLow {
   font-size: 17px;
+  font-weight: bold;
   line-height: 5px;
   margin-left: 43px;
 }
