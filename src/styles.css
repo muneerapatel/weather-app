@@ -34,6 +34,10 @@ a {
   font-weight: 400;
 }
 
+.currentDescription {
+  text-transform: capitalize;
+}
+
 .currentTemp {
   font-size: 70px;
   margin-left: 43px;
@@ -67,7 +71,7 @@ a {
   margin-top: 5px;
 }
 
-.tempFeel {
+.currentFeel {
   font-size: 15px;
   font-style: italic;
   margin-top: 5px;

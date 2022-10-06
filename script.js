@@ -5,6 +5,11 @@ function displayWeather(response) {
   document.querySelector("#temp-reading").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector(".currentDescription").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector(".tempFeel").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
 }
 
 // city display
