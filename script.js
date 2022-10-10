@@ -16,6 +16,8 @@ function displayWeather(response) {
   document.querySelector(".high").innerHTML = Math.round(
     response.data.main.temp_max
   );
+  document.querySelector(".currentWeatherImage").innerHTML =
+    response.data.main.temp;
 }
 
 // city display
