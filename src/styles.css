@@ -43,6 +43,18 @@ a {
   margin-left: 43px;
 }
 
+.degreeSymbols {
+  font-size: 25px;
+}
+
+.currentTemp .active {
+  color: black;
+  cursor: default;
+}
+
+.currentTemp .active:hover {
+  text-decoration: none;
+}
 .currentHighLow {
   font-size: 17px;
   font-weight: bold;
@@ -131,4 +143,8 @@ a {
   font-size: 20px;
   margin: 15px;
   font-size: 15px;
+}
+
+.currentDescription:first-letter {
+  text-transform: capitalize;
 }
