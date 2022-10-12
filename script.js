@@ -72,6 +72,37 @@ day.innerHTML = enteredDay + " ";
 hour.innerHTML = enteredHour;
 minute.innerHTML = enteredMinute + " ";
 
+//current hourly forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector(".dayForecast");
+  let hours = [
+    "12 AM",
+    "3 AM",
+    "6 AM",
+    "9 AM",
+    "12 PM",
+    "3 PM",
+    "6 PM",
+    "9 PM",
+    "11 PM",
+  ];
+  let forecastHTML = `<div class="row justify-content-center">`;
+  hours.forEach(function (hour) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-1">
+            <div class="hourForecast">${hour}</div>
+            <img src="http://openweathermap.org/img/wn/09n@2x.png" alt="" width="60"/>
+            <div class="hourlyTemperature">18°</div>
+      </div>
+      `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //celcius to fahrenheit
 
 function displayFahrenheitTemperature(event) {
@@ -91,6 +122,8 @@ function displayCelciusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 let celciusTemperature = null;
+
+displayForecast();
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);

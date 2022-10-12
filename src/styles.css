@@ -23,15 +23,24 @@ a {
   text-align: center;
 }
 
-.currentWeatherImage {
-  font-size: 30px;
+.leftTop {
+  padding: 0px;
+  margin: 0 auto;
+}
+#icon {
   text-align: center;
+  width: 80px;
+  height: auto;
+}
+
+.bottomLeft {
+  padding-left: 110px;
 }
 
 .currentWeather {
-  font-size: 25px;
-  line-height: 40px;
+  font-size: 35px;
   font-weight: 400;
+  padding-left: 20px;
 }
 
 .currentDescription {
@@ -40,7 +49,6 @@ a {
 
 .currentTemp {
   font-size: 70px;
-  margin-left: 43px;
 }
 
 .degreeSymbols {
@@ -58,8 +66,6 @@ a {
 .currentHighLow {
   font-size: 17px;
   font-weight: bold;
-  line-height: 5px;
-  margin-left: 43px;
 }
 .high {
   color: rgb(165, 7, 7);
@@ -75,7 +81,8 @@ a {
 }
 
 .location {
-  font-size: 30px;
+  font-size: 40px;
+  line-height: 90px;
 }
 
 .schedule {
@@ -92,21 +99,17 @@ a {
 
 .dayForecast {
   text-align: center;
-  margin: 40px 10px;
+  margin-top: 70px;
 }
-.dayTimes {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.dayIcons {
-  font-size: 30px;
+.hourForecast {
+  font-size: 18px;
+  margin-bottom: 7px;
 }
 
-.dayTemps {
-  font-size: 20px;
+.hourlyTemperature {
+  font-size: 16px;
   color: blue;
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 .weekForecast {
