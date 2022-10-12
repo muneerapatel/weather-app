@@ -24,6 +24,8 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather.description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -101,6 +103,15 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "c9a673fc2e2ccbea1cacfb6a4a47e6f7";
+  let apiUrl = `
+https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric
+`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //celcius to fahrenheit
