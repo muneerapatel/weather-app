@@ -74,8 +74,8 @@ day.innerHTML = enteredDay + " ";
 hour.innerHTML = enteredHour;
 minute.innerHTML = enteredMinute + " ";
 
-function formatHour(hourstamp) {
-  let date = new Date(hourstamp * 1000);
+function formatForecastHourly(timestamp) {
+  let date = new Date(timestamp * 1000);
   let hour = date.getHours();
   let hours = [
     "12 AM",
@@ -105,20 +105,37 @@ function formatHour(hourstamp) {
   ];
   return hours[hour];
 }
-//current hourly forecast
+
+function formatForecastDaily(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "SUNDAY",
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY",
+  ];
+  return days[day];
+}
 
 function displayForecast(response) {
-  let forecast = response.data.hourly;
-  let forecastElement = document.querySelector(".dayForecast");
+  //Hourly forecast
+  let hourlyForecast = response.data.hourly;
+  let hourlyForecastElement = document.querySelector(".dayForecast");
 
-  let forecastHTML = `<div class="row justify-content-center">`;
-  forecast.forEach(function (forecastHour, index) {
-    if (index < 10) {
-      forecastHTML =
-        forecastHTML +
+  let hourlyForecastHTML = `<div class="row justify-content-center">`;
+  hourlyForecast.forEach(function (forecastHour, index) {
+    if (index < 12) {
+      hourlyForecastHTML =
+        hourlyForecastHTML +
         `
           <div class="col-1">
-            <div class="hourForecast">${formatHour(forecastHour.dt)}</div>
+            <div class="hourForecast">${formatForecastHourly(
+              forecastHour.dt
+            )}</div>
             <img src="http://openweathermap.org/img/wn/${
               forecastHour.weather[0].icon
             }@2x.png" alt="" width="60"/>
@@ -129,8 +146,36 @@ function displayForecast(response) {
       `;
     }
   });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+
+  hourlyForecastHTML = hourlyForecastHTML + `</div>`;
+  hourlyForecastElement.innerHTML = hourlyForecastHTML;
+
+  // Daily forecast
+  let dailyForecast = response.data.daily;
+  let dailyForecastElement = document.querySelector(".weekForecast");
+  let dailyForecastHTML = `<div class="row justify-content-center">`;
+  dailyForecast.forEach(function (forecastDaily, index) {
+    if (index < 5) {
+      dailyForecastHTML =
+        dailyForecastHTML +
+        `
+  <div class="col-1">
+   <div class="dailyForecast">${formatForecastDaily(forecastDaily.dt)}</div>
+ <img src="http://openweathermap.org/img/wn/${
+   forecastDaily.weather[0].icon
+ }@2x.png" alt="" width="60"/>
+            <div class="dailyTemperature"<span class="dailyLow">${Math.round(
+              forecastDaily.temp.min
+            )}<span/>|<span class="dailyHigh">${Math.round(
+          forecastDaily.temp.max
+        )}<span/></div></div>
+
+  `;
+    }
+  });
+
+  dailyForecastHTML = dailyForecastHTML + `</div>`;
+  dailyForecastElement.innerHTML = dailyForecastHTML;
 }
 
 function getForecast(coordinates) {
