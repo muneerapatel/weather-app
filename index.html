@@ -17,32 +17,44 @@
 
   </head>
   <body>
+    <video autoplay muted loop id="myVideo">
+  <source src="src/images/rain.mp4" type="video/mp4">
+</video>
+
     <div class="container">
       <div class="pageWrapper">
       <div class="weatherWrapper">
       <!-- search form -->
-      <div class="searchForm">
-        <form>
+      <div class="searchForm ">
+        <form class="form-inline">
           <div class="row justify-content-center">
-            <div class="city col-6">
+            <div class="city col-3">
               <input
                 type="text"
                 id="city-value"
-                placeholder="CITY"
+                placeholder="ENTER CITY HERE"
                 class="form-control text-center"
               />
             </div>
-            <div class="col-1 searchButton">
+            <div class="col-2 searchButton">
               <input
                 type="submit"
                 id="search"
-                value="?"
+                value="SEARCH"
                 class="form-control btn btn-outline-secondary"
                 
               />
             </div>
           </div>
         </form>
+ <!-- <form>
+        <input type="text" placeholder="Enter your username" />
+        <input type="password" placeholder="Enter your password" />
+        <input type="submit" value="Login" />
+      </form> -->
+   
+
+
       </div>
 
       <!-- main headers -->
@@ -70,72 +82,13 @@
 
 
       <div class="dayForecast"></div>
-      <!-- day temperatures
-      <div class="dayForecast">
-      <div class="row justify-content-center row dayTimes">
-      
-        <div class="col">12:00 AM</div>
-        <div class="col">3:00 AM</div>
-        <div class="col">6:00 AM</div>
-        <div class="col">9:00 AM</div>
-        <div class="col">12:00 PM</div>
-        <div class="col">3:00 PM</div>
-        <div class="col">6:00 PM</div>
-        <div class="col">9:00 PM</div>
-       
-
-      </div>
-
-      <div class="row justify-content-center dayIcons ">
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-        <div class="col-1"><img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36"/></div>
-       
-      </div>
-
-       <div class="row justify-content-center dayTemps">
-      <div class="col-1">18°</i></div>
-      <div class="col-1">18°</div>
-      <div class="col-1">19°</div>
-      <div class="col-1">20°</div>
-      <div class="col-1">21°</div>
-      <div class="col-1">22°</div>
-      <div class="col-1">23°</div>
-       <div class="col-1">23°</div>
      
-      </div>
-      </div>
-    -->
-
+    
       <!-- week temperatures -->
       <div class="weekForecast">
-       <div class="row justify-content-around weekDays">
-<div class="col-3 weekOne">TUESDAY</div>
-<div class="col-3 w2">WEDNESDAY</div>
-<div class="col-3 w3">THURSDAY</div>
-<div class="col-3 w4">FRIDAY</div>
-      </div>
-
-      <div class="row justify-content-around weekIcons">
-<div class="col-3"><i class="fa-solid fa-sun"></i></div>
-<div class="col-3"><i class="fa-solid fa-cloud-rain"></i></div>
-<div class="col-3"><i class="fa-solid fa-sun"></i></div>
-<div class="col-3"><i class="fa-solid fa-cloud-rain"></i></div>
-      </div>
-       
- <div class="row justify-content-around weekTemps">
-<div class="col-3">22° | 17°</i></div>
-<div class="col-3">23° | 18°</i></div>
-<div class="col-3">21° | 17°</div>
-<div class="col-3">25° | 21°</div>
-      </div>
+     
 </div>
-      <div class="expandForecast"><a href="#">5 </a>| <a href="#"> 10 </a>D</div>
+
       <!-- end -->
       <script type="text/javascript" src="script.js"></script>
     </div>
@@ -145,4 +98,4 @@
   </body>
 </html>
 
-    <!-- fa-solid fa-cloud-sun  -->
+

@@ -141,7 +141,7 @@ function displayForecast(response) {
             }@2x.png" alt="" width="60"/>
             <div class="hourlyTemperature">${Math.round(
               forecastHour.temp
-            )}</div>
+            )}°</div>
       </div>
       `;
     }
@@ -166,9 +166,9 @@ function displayForecast(response) {
  }@2x.png" alt="" width="60"/>
             <div class="dailyTemperature"<span class="dailyLow">${Math.round(
               forecastDaily.temp.min
-            )}<span/>|<span class="dailyHigh">${Math.round(
+            )}°<span/>|<span class="dailyHigh">${Math.round(
           forecastDaily.temp.max
-        )}<span/></div></div>
+        )}°<span/></div></div>
 
   `;
     }

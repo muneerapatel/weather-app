@@ -17,8 +17,8 @@ a {
 
 .searchForm {
   margin: 25px 0px 35px;
-  text-align: center;
 }
+
 .city {
   text-align: center;
 }
@@ -87,7 +87,6 @@ a {
 
 .schedule {
   font-size: 25px;
-
   margin-top: 5px;
 }
 
@@ -114,27 +113,10 @@ a {
 
 .weekForecast {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 .weekDays {
   font-size: 25px;
-}
-
-.weekIcons {
-  font-size: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.weekTemps {
-  font-size: 20px;
-}
-
-.expandForecast {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
 }
 
 .githubLink {
@@ -154,4 +136,17 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 0px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.weatherWrapper {
+  position: relative;
+  background-color: whitesmoke;
 }
