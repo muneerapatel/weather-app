@@ -25,6 +25,41 @@ function displayWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather.description);
 
+  // Display background
+  let backgroundElement = document.getElementById("my-video");
+  console.log(backgroundElement.getAttribute("src"));
+  let mainWeather = response.data.weather[0].main;
+  console.log(mainWeather);
+  if (mainWeather == "Clouds") {
+    backgroundElement.src = "src/images/clouds.mp4";
+  } else if (mainWeather == "Clear") {
+    backgroundElement.src = "src/images/clear.mp4";
+  } else if (mainWeather == "Thunderstorm") {
+    backgroundElement.src = "src/images/thunderstorm.mp4";
+  } else if (mainWeather == "Snow") {
+    backgroundElement.src = "src/images/snow.mp4";
+  } else {
+    backgroundElement.src = "src/images/other.mp4";
+  }
+  /* else (mainWeather=="Drizzle") {}
+else (mainWeather=="Rain") {}
+else (mainWeather=="Snow") {}
+else (mainWeather=="Mist") {}
+else (mainWeather=="Smoke") {}
+else (mainWeather=="Haze") {}
+else (mainWeather=="Dust") {}
+else (mainWeather=="Fog) {}
+else (mainWeather=="Sand") {}
+else (mainWeather=="Ash") {}
+else (mainWeather=="Squall") {}
+else (mainWeather=="Tornado) {}
+else (mainWeather=="Clear") {}
+
+    backgroundElement = "src/images/clouds.mp4";
+  }
+*/
+  //document.querySelector("#vid_tag").src = "_1/video/bvid_1.mp4";
+
   getForecast(response.data.coord);
 }
 
