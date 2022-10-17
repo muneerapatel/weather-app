@@ -13,6 +13,9 @@ a {
   border: solid black;
   border-radius: 10px;
   margin-top: 50px;
+  -webkit-box-shadow: 3px 3px 34px 24px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 3px 3px 34px 24px rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 34px 24px rgba(0, 0, 0, 1);
 }
 
 .searchForm {
@@ -148,5 +151,5 @@ a {
 
 .weatherWrapper {
   position: relative;
-  background-color: whitesmoke;
+  background-color: rgb(181, 186, 198);
 }

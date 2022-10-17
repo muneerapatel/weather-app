@@ -28,9 +28,8 @@ function displayWeather(response) {
 
   // Display background
   let backgroundElement = document.getElementById("my-video");
-  console.log(backgroundElement.getAttribute("src"));
+
   let mainWeather = response.data.weather[0].main;
-  console.log(mainWeather);
   if (mainWeather == "Clouds") {
     backgroundElement.src = "src/images/clouds.mp4";
   } else if (mainWeather == "Clear") {
@@ -39,27 +38,21 @@ function displayWeather(response) {
     backgroundElement.src = "src/images/thunderstorm.mp4";
   } else if (mainWeather == "Snow") {
     backgroundElement.src = "src/images/snow.mp4";
+  } else if (mainWeather == "Mist") {
+    backgroundElement.src = "src/images/mist.mp4";
+  } else if (mainWeather == "Haze") {
+    backgroundElement.src = "src/images/haze.mp4";
+  } else if (mainWeather == "Drizzle") {
+    backgroundElement.src = "src/images/drizzle.mp4";
+  } else if (mainWeather == "Rain") {
+    backgroundElement.src = "src/images/rain.mp4";
+  } else if (mainWeather == "Sand") {
+    backgroundElement.src = "src/images/sand.mp4";
+  } else if (mainWeather == "Smoke") {
+    backgroundElement.src = "src/images/smoke.mp4";
   } else {
     backgroundElement.src = "src/images/other.mp4";
   }
-  /* else (mainWeather=="Drizzle") {}
-else (mainWeather=="Rain") {}
-else (mainWeather=="Snow") {}
-else (mainWeather=="Mist") {}
-else (mainWeather=="Smoke") {}
-else (mainWeather=="Haze") {}
-else (mainWeather=="Dust") {}
-else (mainWeather=="Fog) {}
-else (mainWeather=="Sand") {}
-else (mainWeather=="Ash") {}
-else (mainWeather=="Squall") {}
-else (mainWeather=="Tornado) {}
-else (mainWeather=="Clear") {}
-
-    backgroundElement = "src/images/clouds.mp4";
-  }
-*/
-  //document.querySelector("#vid_tag").src = "_1/video/bvid_1.mp4";
 
   getForecast(response.data.coord);
 }
