@@ -1,7 +1,8 @@
 //api
 
 function displayWeather(response) {
-  document.querySelector("li.location").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#country").innerHTML = response.data.sys.country;
   let temperatureElement = document.querySelector("#temp-reading");
 
   celciusTemperature = response.data.main.temp;
