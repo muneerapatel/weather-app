@@ -13,10 +13,10 @@ function displayWeather(response) {
   document.querySelector(".tempFeel").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  document.querySelector(".low").innerHTML = Math.round(
+  document.querySelector("#current-low").innerHTML = Math.round(
     response.data.main.temp_min
   );
-  document.querySelector(".high").innerHTML = Math.round(
+  document.querySelector("#current-high").innerHTML = Math.round(
     response.data.main.temp_max
   );
   let iconElement = document.querySelector("#icon");
@@ -157,11 +157,11 @@ function displayForecast(response) {
 
   let hourlyForecastHTML = `<div class="row justify-content-center">`;
   hourlyForecast.forEach(function (forecastHour, index) {
-    if (index < 12) {
+    if (index < 10) {
       hourlyForecastHTML =
         hourlyForecastHTML +
         `
-          <div class="col-1">
+          <div class="col-1 hourlyBox">
             <div class="hourForecast">${formatForecastHourly(
               forecastHour.dt
             )}</div>
@@ -188,16 +188,19 @@ function displayForecast(response) {
       dailyForecastHTML =
         dailyForecastHTML +
         `
-  <div class="col-1">
+  <div class="col-1 weeklyBox">
    <div class="dailyForecast">${formatForecastDaily(forecastDaily.dt)}</div>
  <img src="http://openweathermap.org/img/wn/${
    forecastDaily.weather[0].icon
  }@2x.png" alt="" width="60"/>
-            <div class="dailyTemperature"<span class="dailyLow">${Math.round(
-              forecastDaily.temp.min
-            )}°<span/> | <span class="dailyHigh">${Math.round(
-          forecastDaily.temp.max
-        )}°<span/></div></div>
+            <div class="dailyTemperature">
+            <span class="low" id="daily-low">
+            ${Math.round(forecastDaily.temp.min)}°<span/>
+            |
+            <span class="high" id="daily-high">
+            ${Math.round(forecastDaily.temp.max)}°<span/>
+            </div>
+            </div>
 
   `;
     }
@@ -240,3 +243,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
+
+searchCity("johannesburg");

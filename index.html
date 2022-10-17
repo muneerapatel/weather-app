@@ -62,8 +62,8 @@
             </li>
          <div class="bottomLeft">
             <li class="currentTemp"><span id="temp-reading">22</span> <span class="degreeSymbols"><a href="#" id="celcius-link" class="active">°C </a>|<a href="#" id="fahrenheit-link">°F</a></span></li>
-             <li class="currentHighLow">↑
-             <span class="high">25</span>° ↓ <span class="low">18</span>°
+             <li class="currentHighLow">&#8595; 
+             <span class="low" id="current-low">18</span><span id="low-deg">°</span> &#8593; <span class="high" id="current-high">25</span><span id="high-deg">°</span>
             </li></div>
           </ul>
         </div>
@@ -76,14 +76,15 @@
         </div>
       </div>
 
-
+ <!-- day temperatures -->
+ <div class="dailyHeading">Hourly Forecast</div>
+ <hr>
       <div class="dayForecast"></div>
-     
-    
+   
       <!-- week temperatures -->
-      <div class="weekForecast">
-     
-</div>
+       <div class="weeklyHeading">Five Day Forecast</div>
+       <hr>
+      <div class="weekForecast"></div>
 
       <!-- end -->
       <script type="text/javascript" src="script.js"></script>
