@@ -14,16 +14,14 @@
     <script src="https://kit.fontawesome.com/83c4fb4682.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="src/styles.css">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
   </head>
   <body>
     <video autoplay muted loop id="my-video">
-  <source src="src/images/rain.mp4" type="video/mp4">
-</video>
-
+  <source src="src/images/rain.mp4" type="video/mp4"></video>
     <div class="container">
       <div class="pageWrapper">
       <div class="weatherWrapper">
+
       <!-- search form -->
       <div class="searchForm ">
         <form class="form-inline">
@@ -42,15 +40,10 @@
                 id="search"
                 value="SEARCH"
                 class="form-control btn btn-outline-secondary"
-                
               />
             </div>
           </div>
         </form>
- 
-   
-
-
       </div>
 
       <!-- main headers -->
@@ -75,20 +68,13 @@
           </ul>
         </div>
       </div>
-
- <!-- day temperatures -->
+  <!-- Forecast -->
     <hr>
  <div class="dailyHeading">Hourly Forecast</div>
- 
-      <div class="dayForecast"></div>
-   
-      <!-- week temperatures -->
-        <hr>
-       <div class="weeklyHeading">Five Day Forecast</div>
-  
-      <div class="weekForecast"></div>
-       
- 
+<div class="dayForecast"></div>
+<hr>
+<div class="weeklyHeading">Five Day Forecast</div>
+<div class="weekForecast"></div>
       <!-- end -->
       <script type="text/javascript" src="script.js"></script>
     </div>

@@ -1,89 +1,12 @@
-//api
-
-function displayWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#country").innerHTML = response.data.sys.country;
-  let temperatureElement = document.querySelector("#temp-reading");
-
-  celciusTemperature = response.data.main.temp;
-
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-  document.querySelector(".currentDescription").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector(".tempFeel").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
-  document.querySelector("#current-low").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#current-high").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather.description);
-
-  // Display background
-  let backgroundElement = document.getElementById("my-video");
-
-  let mainWeather = response.data.weather[0].main;
-  if (mainWeather == "Clouds") {
-    backgroundElement.src = "src/images/clouds.mp4";
-  } else if (mainWeather == "Clear") {
-    backgroundElement.src = "src/images/clear.mp4";
-  } else if (mainWeather == "Thunderstorm") {
-    backgroundElement.src = "src/images/thunderstorm.mp4";
-  } else if (mainWeather == "Snow") {
-    backgroundElement.src = "src/images/snow.mp4";
-  } else if (mainWeather == "Mist") {
-    backgroundElement.src = "src/images/mist.mp4";
-  } else if (mainWeather == "Haze") {
-    backgroundElement.src = "src/images/haze.mp4";
-  } else if (mainWeather == "Drizzle") {
-    backgroundElement.src = "src/images/drizzle.mp4";
-  } else if (mainWeather == "Rain") {
-    backgroundElement.src = "src/images/rain.mp4";
-  } else if (mainWeather == "Sand") {
-    backgroundElement.src = "src/images/sand.mp4";
-  } else if (mainWeather == "Smoke") {
-    backgroundElement.src = "src/images/smoke.mp4";
-  } else {
-    backgroundElement.src = "src/images/other.mp4";
-  }
-
-  getForecast(response.data.coord);
-}
-
-function searchCity(city) {
-  let apiKey = "c9a673fc2e2ccbea1cacfb6a4a47e6f7";
-  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  axios.get(weatherUrl).then(displayWeather);
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-value").value;
-  searchCity(city);
-}
-
-let form = document.querySelector(".searchForm");
-form.addEventListener("submit", handleSubmit);
-
 // time and date
 let now = new Date();
-
 let day = document.querySelector(".currentDay");
 let hour = document.querySelector(".currentHour");
 let minute = document.querySelector(".currentMinute");
-
 let enteredHour = now.getHours();
 if (enteredHour < 10) {
   enteredHour = "0" + enteredHour;
 }
-
 let enteredMinute = now.getMinutes();
 if (enteredMinute < 10) {
   enteredMinute = "0" + enteredMinute;
@@ -98,7 +21,6 @@ let days = [
   "Saturday",
 ];
 let enteredDay = days[now.getDay()];
-
 day.innerHTML = enteredDay + " ";
 hour.innerHTML = enteredHour;
 minute.innerHTML = enteredMinute + " ";
@@ -178,7 +100,6 @@ function displayForecast(response) {
 
   hourlyForecastHTML = hourlyForecastHTML + `</div>`;
   hourlyForecastElement.innerHTML = hourlyForecastHTML;
-
   // Daily forecast
   let dailyForecast = response.data.daily;
   let dailyForecastElement = document.querySelector(".weekForecast");
@@ -216,7 +137,74 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-//celcius to fahrenheit
+function displayWeather(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#country").innerHTML = response.data.sys.country;
+  let temperatureElement = document.querySelector("#temp-reading");
+
+  celciusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  document.querySelector(".currentDescription").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector(".tempFeel").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+  document.querySelector("#current-low").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+  document.querySelector("#current-high").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather.description);
+
+  // Display background
+  let backgroundElement = document.getElementById("my-video");
+  let mainWeather = response.data.weather[0].main;
+  backgroundElement.src = "src/images/other.mp4";
+  if (mainWeather == "Clouds") {
+    backgroundElement.src = "src/images/clouds.mp4";
+  } else if (mainWeather == "Clear") {
+    backgroundElement.src = "src/images/clear.mp4";
+  } else if (mainWeather == "Thunderstorm") {
+    backgroundElement.src = "src/images/thunderstorm.mp4";
+  } else if (mainWeather == "Snow") {
+    backgroundElement.src = "src/images/snow.mp4";
+  } else if (mainWeather == "Mist") {
+    backgroundElement.src = "src/images/mist.mp4";
+  } else if (mainWeather == "Haze") {
+    backgroundElement.src = "src/images/haze.mp4";
+  } else if (mainWeather == "Drizzle") {
+    backgroundElement.src = "src/images/drizzle.mp4";
+  } else if (mainWeather == "Rain") {
+    backgroundElement.src = "src/images/rain.mp4";
+  } else if (mainWeather == "Sand") {
+    backgroundElement.src = "src/images/sand.mp4";
+  } else if (mainWeather == "Smoke") {
+    backgroundElement.src = "src/images/smoke.mp4";
+  } else {
+    backgroundElement.src = "src/images/other.mp4";
+  }
+
+  getForecast(response.data.coord);
+}
+
+function searchCity(city) {
+  let apiKey = "c9a673fc2e2ccbea1cacfb6a4a47e6f7";
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(weatherUrl).then(displayWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-value").value;
+  searchCity(city);
+}
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
@@ -235,7 +223,10 @@ function displayCelciusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
-let celciusTemperature = null;
+let celsiusTemperature = null;
+
+let form = document.querySelector(".searchForm");
+form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
