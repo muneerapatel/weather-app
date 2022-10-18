@@ -81,7 +81,7 @@ a {
 }
 
 .low {
-  color: rgb(20, 111, 214);
+  color: rgb(5, 56, 114);
 }
 
 #low-deg {
@@ -107,12 +107,13 @@ a {
 }
 
 .currentFeel {
-  font-size: 15px;
-  margin-top: 5px;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
 .dailyHeading {
   font-size: 20px;
+  font-weight: 600;
   margin-top: 25px;
   text-align: center;
 }
@@ -121,19 +122,21 @@ a {
 }
 .hourForecast {
   font-size: 15px;
+  font-weight: 500;
   margin-bottom: 7px;
 }
 
 .hourlyTemperature {
   font-size: 15px;
-  color: blue;
+  color: rgb(0, 0, 0);
   font-weight: 700;
   margin-top: 7px;
 }
 
 .weeklyHeading {
   font-size: 20px;
-  margin-top: 50px;
+  font-weight: 600;
+  margin-top: 25px;
   text-align: center;
 }
 
@@ -143,6 +146,7 @@ a {
 }
 .dailyForecast {
   font-size: 17px;
+  font-weight: 500;
 }
 
 .dailyTemperature {
@@ -152,9 +156,10 @@ a {
 
 .githubLink {
   text-align: center;
-  font-size: 20px;
-  margin: 15px;
-  font-size: 15px;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .currentDescription:first-letter {
@@ -167,17 +172,21 @@ a {
   align-items: center;
   margin-top: 20px;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .weeklyBox {
-  margin-right: 20px;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  width: 100px;
+  width: 125px;
+  margin: 20px 10px 40px;
+  border: solid rgb(89, 98, 106, 0.3);
+  border-radius: 10px;
+  padding: 10px 10px 10px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    -10px 5px 22px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, -10px 5px 22px 5px rgba(0, 0, 0, 0);
 }
 
 #my-video {
@@ -190,5 +199,38 @@ a {
 
 .weatherWrapper {
   position: relative;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(226, 232, 243);
+  padding-bottom: 0px;
+}
+
+#author {
+  color: white;
+}
+
+hr {
+  display: block;
+  margin-left: 75px;
+  margin-right: 75px;
+  border-top: 3px solid rgb(89, 98, 106);
+}
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    -10px 5px 22px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, -10px 5px 22px 5px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
 }

@@ -161,7 +161,7 @@ function displayForecast(response) {
       hourlyForecastHTML =
         hourlyForecastHTML +
         `
-          <div class="col-1 hourlyBox">
+          <div class="col-1 hourlyBox hvr-grow">
             <div class="hourForecast">${formatForecastHourly(
               forecastHour.dt
             )}</div>
@@ -188,7 +188,7 @@ function displayForecast(response) {
       dailyForecastHTML =
         dailyForecastHTML +
         `
-  <div class="col-1 weeklyBox">
+  <div class="col-1 weeklyBox hvr-grow">
    <div class="dailyForecast">${formatForecastDaily(forecastDaily.dt)}</div>
  <img src="http://openweathermap.org/img/wn/${
    forecastDaily.weather[0].icon
@@ -201,7 +201,6 @@ function displayForecast(response) {
             ${Math.round(forecastDaily.temp.max)}°<span/>
             </div>
             </div>
-
   `;
     }
   });
