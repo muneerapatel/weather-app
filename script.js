@@ -203,6 +203,10 @@ function searchCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-value").value;
+  let celciusLink = document.querySelector("#celcius-link");
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   searchCity(city);
 }
 
